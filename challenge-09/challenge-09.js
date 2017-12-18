@@ -64,7 +64,7 @@
 
   function calculator (a,b) {
     return function (callback) {
-       return callback();
+       return callback(a,b);
     }
   }
  
@@ -106,15 +106,16 @@
   As suas respostas devem estar abaixo dos `console.log` referentes à cada
   chamada.
   */
-  console.log( 'O resultado da subtração é:' + subtraction(function() { return 20 - 5;}) );
+  console.log( 'O resultado da subtração é:' + subtraction(function( num1, num2) { 
+    return num1 - num2;}) );
   // ?
 
-  console.log( 'O resultado da multiplicação é:' + multiplication(function() {return 10 * 2;}) );
+  console.log( 'O resultado da multiplicação é:' + multiplication(function(num1, num2) {return num1 * num2;}) );
   // ?
 
-  console.log( 'O resultado da divisão é:' + division(function() { return 100 / 10;}) );
+  console.log( 'O resultado da divisão é:' + division(function(num1,num2) { return num1 / num2;}) );
   // ?
 
-  console.log( 'O resto da divisão é:' + mod(function() {return 10 % 3;}) );
+  console.log( 'O resto da divisão é:' + mod(function(num1, num2) {return num1 % num2;}) );
   // ?
 })()
