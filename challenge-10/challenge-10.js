@@ -1,4 +1,4 @@
-function() { 
+(function() { 
   /*
   Crie uma IIFE que envolva todo esse arquivo (inclusive esse comentário),
   e faça a indentação correta.
@@ -48,10 +48,11 @@ function() {
   - O desafio é fazer o retorno sem usar "if" ou "switch".
   */
 function isOperatorValid (operator) {
-  if(operator !== '+' || '-' || '*' || '/' || '%') {
-    return 'false'}
-  return 'true';
+  return (operator === '+' || operator === '-' || operator ===  '*' || operator ===  '/' || operator ===  '%')
 }
+  function isOperatorValid (operator) {
+    return operation[operator] !== undefined;
+  }
 
   /*
   Agora vamos criar a calculadora.
@@ -89,9 +90,9 @@ function isOperatorValid (operator) {
   Essa função mostrará a mensagem da operação que criaremos mais abaixo.
   */
 
-  function showOperationMessage(operator, num1, num2) {
-    return 'A operação ' + num1 + operator + num2 + ' = ' + calculator()
-  };
+    function showOperationMessage(operator, num1, num2) {
+      return 'A operação ' + num1 + operator + num2 + ' = '
+    };
 
   /*
   Crie uma função chamada "showErrorMessage" que recebe um parâmetro: o
@@ -99,7 +100,10 @@ function isOperatorValid (operator) {
   Essa função deverá retornar a frase:
   'Operação "[OPERATOR]" não permitida!'
   */
-  // ?
+  
+  function showErrrorMessage (operator) {
+    return 'Operação ' + operator + ' não permitida!';
+  }
 
   /*
   Nossa calculadora está pronta! Agora vamos testá-la:
@@ -107,15 +111,20 @@ function isOperatorValid (operator) {
   - Declare 3 variáveis: "number1" e "number2", iniciando com valor zero, e
   "operationSignal", sem valor por enquanto.
   */
-  // ?
-
+ 
+  var number1 = 0;
+  var number2 = 0;
+  var operationSignal;
+  
   /*
   PASSO 2:
   Atribua à variável operationSignal o operador de soma, e declare uma
   variável chamada "sum", que receba a função "calculator", passando por
   parâmetro a variável que recebeu o sinal da operação.
   */
-  // ?
+  
+  operationSignal = '+';
+  var sum = calculator(operationSignal);
 
   /*
   PASSO 3:
@@ -129,7 +138,8 @@ function isOperatorValid (operator) {
   - O segundo, a função de soma, passando os dois operandos.
   - Se "sum" for "false", mostrar no console a mensagem de erro.
   */
-  // ?
+
+  
 
   /*
   Repita desde o "PASSO 2" com as operações de subtração, multiplicação,
@@ -143,4 +153,4 @@ function isOperatorValid (operator) {
   a mensagem de erro será mostrada no console.
   */
   // ?
-}()
+})()
