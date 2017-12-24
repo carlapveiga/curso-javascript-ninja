@@ -50,10 +50,9 @@
   */
   
     function moreThan(age) {
-      person.birthday > age ? return true  : false;
+    return person.age > age ?  true : false;
     }
-
-    console.log('The person has more than 25?', moreThan(age)())
+    console.log('The person has more than 25?', moreThan(25))
 
   /*
   Faça um loop de 0 a 20, que adicione cada número como um item de um
@@ -77,7 +76,7 @@
   */
   console.log( 'Pares de 0 a 20:' );
   numbers = [];
-  for ( i = 0; i < 20; i++) {
+  for ( i = 0; i <= 20; i++) {
     if (i % 2 !== 0) {
       continue;
     }
@@ -85,4 +84,4 @@
   }
   console.log(numbers)
   
-}()
+})()
