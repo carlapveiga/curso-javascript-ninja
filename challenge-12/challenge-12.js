@@ -68,10 +68,10 @@
   Mostre os livros nesse formato no console:
   */
   
-  /*
+ 
   var strBooks = JSON.stringfy(books)
   console.log(strBooks)
-  */
+  
   
   /*
   Converta os livros novamente para objeto.
@@ -90,7 +90,7 @@
   Crie um array chamado `myName`. Cada item desse array deve ser uma letra do
   seu nome. Adicione seu nome completo no array.
   */
-  var myName = [c,a,r,l,a,p,o,r,t,o,v,e,i,g,a];
+  var myName = ['c','a','r','l','a','p','o','r','t','o','v','e','i','g','a'];
               
   console.log( '\nMeu nome é:', myName );
   
@@ -99,7 +99,7 @@
   Juntando todos os itens do array, mostre no console seu nome.
   */
   
-  console.log(Myname.join(''))
+  console.log(myName.join(''))
   
   console.log( '\nMeu nome invertido é:' );
 
