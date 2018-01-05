@@ -106,8 +106,8 @@
   - `id`: que será o índice do array `brasil`,
   - `estado`: que será o estado do array `brasil`.
   */
-  var newBrasil = brasil.forEach(function(item, index, array) {
-    return ({id: index, estado: item})
+    var newBrasil = brasil.forEach(function(item, index, array) {
+    console.log( {id: index, estado: item});
   });
 
   /*
@@ -124,7 +124,14 @@
   - "Nem todos os estados tem mais de 7 letras!"
   */
   console.log( '\nTodos os estados de `brasil` tem mais de 7 letras?' );
-  // ?
+  console.log(
+    brasil.every(function(item) {
+     if((item.length > 7) === true) {
+       return 'Sim, todos o estados tem mais de 7 letras.' }; 
+      { 
+        return 'Nem todos os estados tem mais de 7 letras!'};
+      })
+  )
 
   /*
   Percorra o array `brasil` e verifique se o Ceará está incluído, atribuindo o
@@ -135,7 +142,12 @@
   - "Ceará não foi incluído :("
   */
   console.log( '\nCeará está incluído em `brasil`?' );
-  // ?
+  var isCeara = brasil.some(function(item) {
+    return item === 'Ceará' ? 'Ceará está incluído!' : 'Ceará não está incluído'
+  })
+  
+  console.log(isCeara)                            
+                       
 
   /*
   Percorra o array `newBrasil` e crie um novo array que some 1 no ID de cada
@@ -143,7 +155,14 @@
   - "[ESTADO] pertence ao Brasil."
   Atribua o novo array a uma variável chamada `map`.
   */
-  // ?
+  
+  var map = newBrasil.map(function(item, index, array) {
+                          return index+1;
+                          return {id: index , estado: item + ' pertence ao Brasil.'}
+                          })
+    
+                                                    
+  console.log(map)
 
   /*
   Mostre no console o array criado acima:
