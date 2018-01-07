@@ -52,7 +52,7 @@
   */
   console.log( '\nOperation:' );
   var operation = justMod2Or3.reduce(function(acumulado,atual,index,array) {
-    return acumulado+1;
+    return acumulado+=1;
     return acumulado * atual;
   },0);
   
@@ -65,7 +65,11 @@
   console.
   */
   console.log( '\nOperation 2:' );
-  // ?
+  var operation2 = justMod2Or3.reduceRight(function(acumulado,atual,index,array) {
+    return acumulado+=1;
+    return acumulado * atual;
+  },0);
+  console.log(operation2)
 
   /*
   Crie um array chamado `name`. Cada elemento desse array deve ser uma sílaba
@@ -76,20 +80,27 @@
   falada, como se você estivesse falando em código xD
   */
   console.log( '\nSeu nome na língua do "P":' );
-  // ?
+  var name = ['car','la']
+  var nameReduce = name.reduce(function(acumulado, atual, index, array) {
+    return 'p' + acumulado + 'p' + atual;
+  });
+  console.log(nameReduce)
 
   /*
   Crie uma variável chamada `inversedName`, que reduzirá o array em uma string
   e atribuirá o seu nome invertido (usando o array criado acima).
   */
   console.log( '\nInversed Name:' );
-  // ?
+  var inversedName = name.reduceRight(function(acumulado, atual, index, array) {
+    return acumulado + atual;
+  });
+  console.log(inversedName)
 
   /*
   Mostre no console o array `numberObjects`.
   */
   console.log( '\nNumber objects' );
-  // ?
+  console.log(numberObjects)
 
   /*
   Verifique se existem em algum índice de numberObjects um objeto ìgual a
@@ -101,19 +112,23 @@
   o que acontece ;)
   */
   console.log( '\nExiste um { number: 2 } em numberObjects?' );
-  // ?
+  var exists = numberObjects.indexOf({ number: 2 })
+  console.log(exists)
+  console.log(exists > -1 ? 'Existe um objeto { number: 2 } em numberObjects!' : 'Não existe um objeto { number: 2 } em numberObjects :(')
 
   /*
   Fazendo o mesmo do exercício acima, mas começando a buscar do último índice,
   será que obtemos um resultado diferente? Faça a busca a partir do índice 2.
   */
   console.log( '\nE buscando a partir do último índice, o { number: 2 } existe?' );
-  // ?
+  var lastExists = numberObjects.lastIndexOf({ number: 2 })
+  console.log(lastExists)
+  console.log(lastExists > -1 ? 'Existe um objeto { number: 2 } em numberObjects!' : 'Não existe um objeto { number: 2 } em numberObjects :(')
 
   /*
   Verifique se `justMod2Or3` é um array. Se for, mostre-o no console, no
   formato de String.
   */
   console.log( '\njustMod2Or3 é um array? Se for, a representação dele em String é:' );
-  // ?
+  console.log(Array.isArray(justMod2Or3) ? justMod2Or3.toString() : false)
 })()
