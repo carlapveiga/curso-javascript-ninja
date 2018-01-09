@@ -52,8 +52,7 @@
   */
   console.log( '\nOperation:' );
   var operation = justMod2Or3.reduce(function(acumulado,atual,index,array) {
-    return acumulado+=1;
-    return acumulado * atual;
+    return (acumulado + 1) * atual;
   },0);
   
   console.log(operation)
@@ -66,8 +65,7 @@
   */
   console.log( '\nOperation 2:' );
   var operation2 = justMod2Or3.reduceRight(function(acumulado,atual,index,array) {
-    return acumulado+=1;
-    return acumulado * atual;
+    return (acumulado + 1) * atual;
   },0);
   console.log(operation2)
 
@@ -83,7 +81,7 @@
   var name = ['car','la']
   var nameReduce = name.reduce(function(acumulado, atual, index, array) {
     return 'p' + acumulado + 'p' + atual;
-  });
+  },'');
   console.log(nameReduce)
 
   /*
@@ -112,18 +110,15 @@
   o que acontece ;)
   */
   console.log( '\nExiste um { number: 2 } em numberObjects?' );
-  var exists = numberObjects.indexOf({ number: 2 })
-  console.log(exists)
-  console.log(exists > -1 ? 'Existe um objeto { number: 2 } em numberObjects!' : 'Não existe um objeto { number: 2 } em numberObjects :(')
+    var obj = numberObjects[1]
+    console.log( numberObjects.indexOf(obj) > -1 ? 'Existe um objeto { number: 2 } em numberObjects!' : 'Não existe um objeto { number: 2 } em numberObjects :(')
 
   /*
   Fazendo o mesmo do exercício acima, mas começando a buscar do último índice,
   será que obtemos um resultado diferente? Faça a busca a partir do índice 2.
   */
   console.log( '\nE buscando a partir do último índice, o { number: 2 } existe?' );
-  var lastExists = numberObjects.lastIndexOf({ number: 2 })
-  console.log(lastExists)
-  console.log(lastExists > -1 ? 'Existe um objeto { number: 2 } em numberObjects!' : 'Não existe um objeto { number: 2 } em numberObjects :(')
+  console.log(numberObjects.lastIndexOf(numberObjects[1]) > -1 ? 'Existe um objeto { number: 2 } em numberObjects!' : 'Não existe um objeto { number: 2 } em numberObjects :(')
 
   /*
   Verifique se `justMod2Or3` é um array. Se for, mostre-o no console, no
