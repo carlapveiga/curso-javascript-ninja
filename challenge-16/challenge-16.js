@@ -35,10 +35,12 @@
     */
     console.log( '\nNome convertido à partir de um slug:' );
     var fullName = 'carla-porto'
-    var fullName2 = fullName.split('-')[0].charAt(0).toUpperCase().concat(fullName.split('-')[0].slice(1) + ' ' + fullName.split('-')[1].charAt(0).toUpperCase().concat(fullName.split('-')[1].slice(1)))
-    
+    var fullName = fullName.split('-')[0].charAt(0).toUpperCase().concat(fullName.split('-')[0].slice(1) + ' ' + fullName.split('-')[1].charAt(0).toUpperCase().concat(fullName.split('-')[1].slice(1)))
+    var fullName2 = fullName.split('-').map(function(name) {
+      return name[0].toUpperCase() + name.slice(1);
+    });
     console.log(fullName)
-    console.log(fullName2)
+    console.log(fullName2.join(' '))
 
     /*
     - Crie um array com 5 nomes. Reduza esses nomes a uma única string, separando
@@ -51,7 +53,11 @@
     */
     console.log( '\nMeus amigos:' );
     var names = [ 'João', 'Maria', 'Roberto', 'Pedro', 'Marcos' ]
-    var strNames = (names.slice(0,names.length-1).concat(' e ', names.slice(names.length-1).toString(), 'são meus amigos.')).toString()
+    var strNames2 = (names.slice(0,names.length-1).concat(' e ', names.slice(names.length-1).toString(), 'são meus amigos.')).toString()
+    var strNames = names.reduce(function(acumulado,atual,index) {
+      var separador = names.length - 1 === index ? ' e ' : ' , ';
+      return acumulado + separador + atual;
+    }).concat(' são meus amigos');
     console.log(strNames)
 
 
@@ -80,15 +86,11 @@
     */
     console.log( '\nNome com letras intercaladas entre caixa alta e baixa:' );
     var myName = 'carla';
-    for (i = 0; i < myName.length; i++) {
-      
-        
-        console.log(if( i % 2 === 0 ) {myName.charAt(i).toUpperCase()}) + console.log(myName.charAt(i).toLowerCase())
-  
-        console.log(myName.charAt(i).toLowerCase())
-      }
-        
+    var myName2 = [];
+    for (i = 0; i < myName.length; i++) {            
+        myName2.push( i % 2 === 0 ? myName.charAt(i).toUpperCase() : myName.charAt(i).toLowerCase() );
+    } 
      
-    }
+    console.log(myName2)
     
   })();
