@@ -60,15 +60,15 @@
     Mostre o resultado no console.
     */
     console.log( '\nEra "Roberto", agora é:' );
-    console.log(names[2].toString().replace('o','a'))
+    console.log(names[2].toString().replace('to','ta'))
 
     /*
     Mostre no console a parte "nando" da string "Fernando". Use o método que
     faz a busca do final para o início da string.
     */
     console.log( '\nParte de uma string:' );
-    
-
+    console.log('Fernando'.slice(0,6))
+                                 
     /*
     Declare uma variável chamada `myName`, que receba o seu primeiro nome,
     escrito de forma natural.
@@ -79,5 +79,16 @@
     Ex.: Nomes que deveriam funcionar: "Fernando", "RoBertO", "gabriEla", etc.
     */
     console.log( '\nNome com letras intercaladas entre caixa alta e baixa:' );
-    // ?
+    var myName = 'carla';
+    for (i = 0; i < myName.length; i++) {
+      
+        
+        console.log(if( i % 2 === 0 ) {myName.charAt(i).toUpperCase()}) + console.log(myName.charAt(i).toLowerCase())
+  
+        console.log(myName.charAt(i).toLowerCase())
+      }
+        
+     
+    }
+    
   })();
