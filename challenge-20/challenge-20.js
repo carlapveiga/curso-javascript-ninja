@@ -16,43 +16,54 @@
   nome, `username` deve receber "Desconhecido".
   Com a resposta, mostre um alert com a mensagem "Bem vindo [USERNAME]!"
   */
-  // ?
+  
+
+	var username = prompt('Qual seu nome?');
+	console.log(username)
+	if (!username)
+	username = 'Desconhecido';
+
+	
+	alert('Bem vindo ' + username);
 
   /*
   Agora, pergunte ao usuário "Qual o seu e-mail?", atribuindo o resultado à
   uma variável chamada `email`.
   */
-  // ?
+  
+	var email = prompt('Qual o seu email?');
 
   /*
   - Selecione o input de "Nome", atribuindo-o à uma variável chamada
   `$inputUsername`.
   */
-  // ?
+	$inputUsername = doc.querySelector('[type="text"]');
 
   /*
   - Selecione o input de "Email", atribuindo-o à uma variável chamada
   `$inputEmail`.
   */
-  // ?
+  
+	$inputEmail = doc.querySelector('[type="email"]');
 
   /*
   - Selecione o campo de "Mensagem", atribuindo-o à uma variável chamada
   `$message`.
   */
-  // ?
+	$message = doc.getElementsByName('textarea');
 
   /*
   - Selecione o botão de envio do formulário, atribuindo-o à uma variável
   chamada `$button`.
   */
-  // ?
+	$button = doc.querySelector('[type="email"]');
 
   /*
   Preencha os campos de "Nome" e "Email" que estão no documento com os valores
   entrados pelo usuário.
   */
-  // ?
+	$inputUsername.value = username;
+	$inputEmail.value = email;
 
   /*
   Adicione um listener de evento de click ao botão que faça o seguinte:
