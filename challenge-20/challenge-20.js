@@ -77,6 +77,8 @@
       - "Preencha a mensagem!"
   - Se o campo de "Email" for inválido, mostrar:
       - "Entre com um e-mail válido!"
+      
+      
 
   2. Para verificar se o e-mail é válido use a função `isValidEmail`, passando
   o e-mail que foi entrado no campo de "Email" por parâmetro. (A função
