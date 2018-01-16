@@ -56,7 +56,7 @@
   - Selecione o botão de envio do formulário, atribuindo-o à uma variável
   chamada `$button`.
   */
-	$button = doc.querySelector('[type="email"]');
+	$button = doc.querySelector('button');
 
   /*
   Preencha os campos de "Nome" e "Email" que estão no documento com os valores
@@ -91,8 +91,25 @@
   Caso contrário, mostre um alerta com a mensagem:
       - "Não enviado."
   */
-  // ?
-
+	  $button.addEventListener('click', function() {
+		  event.preventDefault();
+		if (!$inputUsername.value)
+			return alert('Preencha o nome do usuário!');
+		if (!$inputEmail.value)
+			return alert('Preencha o email do usuário!');
+		if (!$message.value)
+			return alert('Preencha a messagem!');
+		if ($inputEmail.value)
+			return alert('Entre com um email válido!');
+    if (confirm('Tem certeza que deseja enviar esse formulário?'));
+      return alert('Enviado com sucesso!');
+    return alert('Não enviado')
+      
+    
+      
+	} ,false)
+  
+  
   /*
   Crie uma função chamada `isValidEmail`, que será usada na validação do
   envio do formulário.
